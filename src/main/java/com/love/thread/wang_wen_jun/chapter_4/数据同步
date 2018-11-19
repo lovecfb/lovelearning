@@ -1,0 +1,17 @@
+共享资源：
+    指的是多个线程同时对同一份资源进行访问（读写操作），被多个线程访问的资源就被称为共享资源，如何保证多个线程访问到的数据是一致的，则被称为数据同步或者资源同步。
+
+
+synchronized：
+    synchronized关键字可以实现一个简单的策略来防止线程干扰和内存一致性错误，如果一个对象对多个线程是可见的，那么该对象的所有读或者写都将通过同步的方式来进行。具体表现如下：
+    1）synchronized关键字提供了一种锁机制，能够确保共享变量的互斥访问，从而防止数据不一致问题的出现。
+    2）synchronized关键字包括monitor enter 和 monitor exit两个JVM指令，它能够保证在任何时候任何线程执行到monitor enter成功之前都必须从主内存中获取数据，而不是缓存中
+    在monitor exit运行成功之后，共享变量被更新后的值必须刷入主内存。
+    2）synchronized指令严格遵守java happens-before规则，一个monitor exit之前必定要有一个monitor enter。
+
+
+synchronized需要注意的问题：
+    1、与monitor关联的对象不能为空
+    2、synchronized作用域太大
+    3、不同的monitor企图锁相同的方法
+    4、多个锁的交叉导致死锁
