@@ -3,6 +3,9 @@ package com.love.thread.wang_wen_jun.chapter_7;
 import java.util.concurrent.TimeUnit;
 
 /**
+ * JVM 退出
+ *
+ *
  * Created by ls on 2018/11/16.
  */
 public class CaptureThreadException {
